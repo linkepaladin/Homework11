@@ -27,5 +27,14 @@ public class Main {
 
         double avgExpense = (double) sum / ledger.length;
         System.out.println("Средняя сумма трат за месяц составила " + avgExpense + " рублей");
+
+        // task 4
+
+        System.out.println("Задача 4");
+
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
+        }
     }
 }
