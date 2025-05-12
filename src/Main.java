@@ -8,7 +8,7 @@ public class Main {
 
         int[] ledger = {100, 500, 200, 50, 40};
         int sum = 0;
-        for (int index: ledger) {
+        for (int index : ledger) {
             sum += index;
         }
         System.out.println("Сумма трат за месяц составила " + sum + " рублей");
@@ -17,9 +17,18 @@ public class Main {
 
         System.out.println("Задача 2");
 
-        Arrays.sort(ledger);
-        System.out.println("Минимальная сумма трат за неделю составила " + ledger[0] + " рублей ");
-        System.out.println("Максимальная сумма трат за неделю составила " + ledger[ledger.length - 1] + " рублей ");
+        int max = ledger[0];
+        int min = ledger[0];
+        for (int j : ledger) {
+            if (max < j) {
+                max = j;
+            }
+            if (min > j) {
+                min = j;
+            }
+        }
+        System.out.println("Минимальная сумма трат за неделю составила " + min + " рублей");
+        System.out.println("Максимальная сумма трат за неделю составила " + max + " рублей");
 
         // task 3
 
@@ -33,8 +42,12 @@ public class Main {
         System.out.println("Задача 4");
 
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            System.out.print(reverseFullName[i]);
+        for (int i = 0; i < reverseFullName.length / 2; i++) {
+            char charToSwap = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = charToSwap;
+
         }
+        System.out.println(Arrays.toString(reverseFullName));
     }
 }
